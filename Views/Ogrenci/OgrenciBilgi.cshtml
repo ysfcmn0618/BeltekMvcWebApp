@@ -1,0 +1,56 @@
+﻿@model OgrenciBilgiVM
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>OgrenciBilgi</title>
+</head>
+<body>
+    <h3>ViewData ile gelen öğrenci bilgileri</h3>
+    @if (ViewData["ogrenci"] != null)
+    {
+        <p>@(((Ogrenci)ViewData["ogrenci"]).Ad)</p>
+    }
+    else
+    {
+        <p>Öğrenci Bulunamadı</p>
+    }
+
+    <h3>ViewBag ile gelen Öğrenci Bilgileri</h3>
+    @if (ViewBag.student != null)
+    {
+        <p>@ViewBag.student.Ad</p>
+    }
+    else
+    {
+        <p>Öğrenci Bulunamadı</p>
+    }
+    <h3>ViewModel ile gelen Öğrenci Bilgileri</h3>
+    @if (Model != null && Model.ogrenci != null)
+    {
+        <p>
+            @Model.ogrenci.Ad
+        </p>
+       
+    }
+    else
+    {
+        <p>Öğrenci Bulunamadı</p>
+    }
+    <h3>ViewModel ile gelen ders bilgileri</h3>
+    @if (Model != null && Model.ders != null)
+    {
+        <p>@Model.ders.Ad
+        </p>
+    }
+    else
+    {
+        <p>Ders Bulunamadı.</p>
+    }
+</body>
+</html>
