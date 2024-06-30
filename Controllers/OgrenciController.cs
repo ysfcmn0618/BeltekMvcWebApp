@@ -37,10 +37,13 @@ namespace BeltekMvcWebApp.Controllers
             var ogr1 = new Ogrenci { Ad = "Ali", Soyad = "Veli", Numara = 123 };
             var ogr2 = new Ogrenci { Ad = "Ahmet", Soyad = "Mehmet", Numara = 456 };
             var ogr3 = new Ogrenci { Ad = "ysf", Soyad = "cmn", Numara = 111 };
+            
             var lst=new List<Ogrenci>();//generic liste olarak öğrenci class ı oluşturulmuştur Bu listenin her bir nesnesi öğrenci class ı içerir.
+            
             lst.Add(ogr1);
             lst.Add(ogr2);
             lst.Add(ogr3);
+            
             return View(lst);
         }
     }

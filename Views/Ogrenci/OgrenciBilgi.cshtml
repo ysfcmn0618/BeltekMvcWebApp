@@ -1,16 +1,13 @@
 ﻿@model OgrenciBilgiVM
+
 @{
-    Layout = null;
+    ViewData["Title"] = "Öğrenci Bilgisi";
+    ViewData["Description"] = "Öğrenci ile alakalı bilgiler listelenir";
 }
+@{
+    Html.RenderPartial("OgrenciPartial");
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>OgrenciBilgi</title>
-</head>
-<body>
+}
     <h3>ViewData ile gelen öğrenci bilgileri</h3>
     @if (ViewData["ogrenci"] != null)
     {
@@ -52,5 +49,4 @@
     {
         <p>Ders Bulunamadı.</p>
     }
-</body>
-</html>
+
