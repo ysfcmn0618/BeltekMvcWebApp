@@ -1,5 +1,6 @@
 ﻿using BeltekMvcWebApp.Models;
 using BeltekMvcWebApp.Models.ViewModels;
+using BeltekMvcWebApp.Veritabani;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BeltekMvcWebApp.Controllers
@@ -13,14 +14,18 @@ namespace BeltekMvcWebApp.Controllers
 
         public ViewResult OgrenciBilgi(int id)
         {
+            var dbco = new DbContextOgrenciler();
             Ogrenci ogr=null;
             if (id == 1)
             {
                 ogr = new Ogrenci { Ad="Ali",Soyad="Veli",Numara=123};
+                
+                dbco.Add(ogr);
             }
             else if (id == 2)
             {
                 ogr = new Ogrenci { Ad = "Muhammed", Soyad = "Ali", Numara = 456 };
+                dbco.Add(ogr);
             }
             ViewData["ogrenci"]= ogr; //ViewData key-value mantığı ile yürür parantez içi key dir ogr value olur.Farklı bir viewdata oluşturduğumuz zaman farklı bir key değeri belirlenmesi gerekmektedir.key değerleri string değer olmak zorundadır.value değerleri object olur.
             ViewBag.student= ogr;//Viewbag ve viewdata iki taşıma yoönteminide kullanıyorsanız key değerleri farklı olmalıdır.Syntaxı rahat dır fakat dynamik yapılardır.runtime da hata alınabilir.
