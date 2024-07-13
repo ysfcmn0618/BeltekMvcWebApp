@@ -2,7 +2,7 @@
 {
     public class OgrenciBilgiVM
     {
-        public Ogrenci ogrenci { get; set; }
-        public Ders ders { get; set; }
+        public Student Student { get; set; }
+        public Class  Class { get; set; }
     }
 }

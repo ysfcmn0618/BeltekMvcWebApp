@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<Student>
 @{
     ////Controller -> View View->Controller arasında gezinmek için ctrl+m+g tuş kombinasyonu hızlı gezinmeyi sağlar
     Layout = null;
@@ -13,5 +13,26 @@
 </head>
 <body>
     <h1>Öğrenci İşlemleri Ana Sayfası</h1>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Ad</th>
+                <th>Soyad</th>
+                <th>Numara</th>
+                <th>Sınıf</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Surname</td>
+                    <td>@item.Number</td>
+                    <td>@item.Class</td>
+                </tr>
+            }
+        </tbody>
+    </table>
 </body>
 </html>

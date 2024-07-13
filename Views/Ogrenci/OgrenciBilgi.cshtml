@@ -11,7 +11,7 @@
     <h3>ViewData ile gelen öğrenci bilgileri</h3>
     @if (ViewData["ogrenci"] != null)
     {
-        <p>@(((Ogrenci)ViewData["ogrenci"]).Ad)</p>
+        <p>@(((Student)ViewData["ogrenci"]).Name)</p>
     }
     else
     {
@@ -21,17 +21,17 @@
     <h3>ViewBag ile gelen Öğrenci Bilgileri</h3>
     @if (ViewBag.student != null)
     {
-        <p>@ViewBag.student.Ad</p>
+        <p>@ViewBag.student.Name</p>
     }
     else
     {
         <p>Öğrenci Bulunamadı</p>
     }
     <h3>ViewModel ile gelen Öğrenci Bilgileri</h3>
-    @if (Model != null && Model.ogrenci != null)
+    @if (Model != null && Model.Student != null)
     {
         <p>
-            @Model.ogrenci.Ad
+            @Model.Student.Name
         </p>
        
     }
@@ -40,9 +40,9 @@
         <p>Öğrenci Bulunamadı</p>
     }
     <h3>ViewModel ile gelen ders bilgileri</h3>
-    @if (Model != null && Model.ders != null)
+    @if (Model != null)
     {
-        <p>@Model.ders.Ad
+        <p>
         </p>
     }
     else
